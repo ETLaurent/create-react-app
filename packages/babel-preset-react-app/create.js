@@ -139,8 +139,8 @@ module.exports = function (api, opts, env) {
       //     ],
       //   },
       // ],
-      // Turn on legacy decorators for TypeScript files
-      isTypeScriptEnabled && [
+      // Turn on legacy decorators
+      [
         require('@babel/plugin-proposal-decorators').default,
         false,
       ],
@@ -196,8 +196,8 @@ module.exports = function (api, opts, env) {
         exclude: /\.tsx?$/,
         plugins: [require('@babel/plugin-transform-flow-strip-types').default],
       },
-      isTypeScriptEnabled && {
-        test: /\.tsx?$/,
+      {
+        test: /\.(js|ts)x?$/,
         plugins: [
           [
             require('@babel/plugin-proposal-decorators').default,
